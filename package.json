@@ -1,14 +1,13 @@
 {
   "name": "game-of-life-functional-grid",
   "version": "1.0.0",
-  "description": "An example of how to use map and filter to get neighvors in Conway's Game of Life",
-  "main": "index.js",
+  "description": "An example of how to use map and filter to get neighbors in Conway's Game of Life",
   "scripts": {
     "test": "mocha --require @babel/register"
   },
   "keywords": [
-    "gol",
-    "functional"
+    "gagme_of_life",
+    "functional_programming"
   ],
   "author": "Gabriel Birke <gb@birke-software.de>",
   "license": "MIT",
