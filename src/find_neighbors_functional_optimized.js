@@ -5,16 +5,16 @@ function generateCoordinates( coordinate ) {
 export function findNeighbors( grid, row, col ) {
 	const maxRow = grid.length;
 	const maxCol = grid[0].length;
-
-	const rowInsideGrid = rowIndex => rowIndex >= 0 && rowIndex < maxRow;
-	const colInsideGrid = colIndex => colIndex >= 0 && colIndex < maxCol;
-	const isCenter = ( rowIndex, colIndex ) => rowIndex === row && colIndex === col
-	const validCoordinate = ( [ r, c ] ) => rowInsideGrid( r ) && colInsideGrid( c ) && !isCenter( r, c )
+	const validCoordinate = ( [ r, c ] ) => r >= 0 && r < maxRow && c >= 0 && c < maxCol && !(r === row && c === col);
 
 	// Cartesian product of generated row and col coordinates,
 	// Inspired by https://stackoverflow.com/q/12303989/130121
 	const coordinates = generateCoordinates( row ).flatMap( r => generateCoordinates( col ).map( c => [ r, c ] ) )
-
-	return coordinates.filter( validCoordinate ).map( ( [ r, c ] ) => grid[r][c] );
 	
+	return coordinates.reduce( ( cells, coordinate ) => {
+		if ( validCoordinate( coordinate ) ) {
+			cells.push( grid[ coordinate[0] ][ coordinate[1] ] );
+		}
+		return cells;
+	}, [] );
 }
