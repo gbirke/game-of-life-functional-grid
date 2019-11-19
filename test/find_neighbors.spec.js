@@ -1,5 +1,7 @@
 import { strict as assert } from 'assert';
 import { findNeighbors as findNeighborsConditional } from '../src/find_neighbors_conditional';
+import { findNeighbors as findNeighborsConditionalFunction } from '../src/find_neighbors_conditional_function';
+import { findNeighbors as findNeighborsCartesianProcedural } from '../src/find_neighbors_cartesian_procedural';
 import { findNeighbors as findNeighborsFunctional } from '../src/find_neighbors_functional';
 import { findNeighbors as findNeighborsFunctionalOptimized } from '../src/find_neighbors_functional_optimized';
 import { ALIVE, DEAD } from '../src/cell_states.js';
@@ -14,8 +16,10 @@ describe( 'Test all implementations of findNeighbors', () => {
 
 	[
 		[ findNeighborsConditional, 'conditional only implementation' ],
-		[ findNeighborsFunctional, 'functional implementation' ],
-		[ findNeighborsFunctionalOptimized, 'optimized functional implementation' ],
+		[ findNeighborsConditionalFunction, 'conditional with grid access function implementation' ],
+		[ findNeighborsCartesianProcedural, 'procedural implementation of cartesian product' ],
+		[ findNeighborsFunctional, 'functional implementation of cartesian product' ],
+		[ findNeighborsFunctionalOptimized, 'optimized functional implementation of cartesian product' ],
 
 	].forEach( ( [ findNeighbors, description ] ) => describe( description, () => {
 		it('should return no neighbors on 1x1 grid', () => {
