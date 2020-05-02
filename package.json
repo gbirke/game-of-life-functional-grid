@@ -5,8 +5,8 @@
   "repository": "https://github.com/gbirke/game-of-life-functional-grid.git",
   "scripts": {
     "test": "mocha --require esm",
-	"start": "npm run benchmark",
-	"benchmark": "node -r esm index.js"
+    "start": "npm run benchmark",
+    "benchmark": "node -r esm index.js"
   },
   "keywords": [
     "game_of_life",
@@ -15,7 +15,7 @@
   "author": "Gabriel Birke <gb@birke-software.de>",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^6.2.2"
+    "mocha": "^7.1.2"
   },
   "dependencies": {
     "benchmark": "^2.1.4",
