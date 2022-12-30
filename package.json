@@ -15,7 +15,7 @@
   "author": "Gabriel Birke <gb@birke-software.de>",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^7.1.2"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "benchmark": "^2.1.4",
